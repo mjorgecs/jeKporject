@@ -6,8 +6,8 @@ Repository for jeKnowledge applicattion - Tech Department 2025
 2. Select a virtual environment to run the program:
      VSCODE: CTRL+SHIFT+P -> Pyhton: Select Virtual Environment (select an environment)
 3. Make sure you have Pyhton and Django installed in your environment:
-     <\b><code>...jeKproject/booking>pyhton --version<code>
-     <\b>  Python 3.13.9 (or other version)
+     <b /><code>...jeKproject/booking>pyhton --version</code>
+     <b />  Python 3.13.9 (or other version)
      ...jeKproject/booking>django-admin --version
        5.2.7 (or other version)
    If not, you must install Python and Django in your environment
