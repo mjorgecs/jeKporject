@@ -1,0 +1,69 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Staff Overview</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'staff/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'staff/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <a class="btn btn-primary" href="/" id="sidebarToggle">Log out</a>
+                    </div>
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">Welcome, {{username}}</h1>
+                    <div class="text-center">
+                        <p>
+                        <h3>📅 Daily Summary - {{date}}</h3>
+                        {% for customer in customers_day %}
+                            <h5 class="description">{{customer.name}} - table {{customer.table.id}} at {{customer.time}} with {{customer.number_of_guests}} friends</h5>
+                        {% endfor %}
+                        {{occupied}} occupied tables from {{total}}
+                        <p>
+                        <h3>📅 Monthly Summary - {{ date|date:"F" }}</h3>
+                        {% for customer in customers_month %}
+                            <h5 class="description">{{customer.name}} with {{customer.number_of_guests}} friends</h5>
+                        {% endfor %}
+                        <p>
+                        <button onclick="toggleSummary()" class="btn btn-primary">Show Annual Summary</button>
+                        <div id="annual-summary" style="display: none; margin-top: 20px;">
+                            <h3>📅 Annual Summary - {{ date|date:"Y" }}</h3>
+                            {% for customer in customers_year %}
+                                <h5 class="description">{{customer.name}} - {{customer.date}}</h5>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function toggleSummary() {
+                const summary = document.getElementById("annual-summary");
+                if (summary.style.display === "none") {
+                    summary.style.display = "block";
+                } else {
+                    summary.style.display = "none";
+                }
+            }
+        </script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
