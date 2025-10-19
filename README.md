@@ -1,5 +1,5 @@
 # jeKporject
-Repository for jeKnowledge applicattion - Tech Department 2025/2026
+Repository for jeKnowledge application - Tech Department 2025/2026
 
 # Installation
 1. Clone the repository or download it
