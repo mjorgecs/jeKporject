@@ -1,4 +1,4 @@
-# jeKporject
+# jeKproject
 Repository for jeKnowledge application - Tech Department 2025/2026
 
 # Installation
