@@ -10,7 +10,7 @@ Repository for jeKnowledge applicattion - Tech Department 2025
      <p><code>Python 3.13.9 (or other version)</code>
      <p><code>...jeKproject/booking>django-admin --version</code>
      <p><code>5.2.7 (or other version)</code></p>
-   If not, you must install Python and Django in your environment
+   If not, you need to install Python and Django in your environment
    
 # How to Run
 1. <code>...jeKproject/booking>python manage.py runserver</code>
